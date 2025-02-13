@@ -8,7 +8,7 @@ app.get('/',(req,res)=>{
     res.send('Hello World')
 })
 
-
+app.use(express.json()) //middleware, as we used post method and use .body
 
 app.use('/ai',aiRoutes)
 
