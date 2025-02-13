@@ -20,10 +20,40 @@ function App() {
     prism.highlightAll()
   }, [])
 
+  // async function reviewCode() {
+  //   const response = await axios.post('http://localhost:3000/ai/get-review', { code })
+  //   setReview(response.data)
+  // }
+
+
+  // anothe try 
+
+
+  // async function reviewCode() {
+  //   try {
+  //     const response = await axios.post("http://localhost:3000/ai/get-review", { code });
+  //     setReview(response.data.review || "No response received.");
+  //   } catch (error) {
+  //     console.error("Error fetching review:", error);
+  //     setReview("Error fetching review.");
+  //   }
+  // }
+
+  // another approach
+
   async function reviewCode() {
-    const response = await axios.post('http://localhost:3000/ai/get-review', { code })
-    setReview(response.data)
+    try {
+      console.log("Sending request to backend...");
+      const response = await axios.post("http://localhost:3000/ai/get-review", { code });
+  
+      console.log("Full API Response:", response.data); // Log full response
+      setReview(response.data.review || "No review received."); // Ensure correct field
+    } catch (error) {
+      console.error("Error fetching review:", error.response ? error.response.data : error);
+      setReview("Error fetching review.");
+    }
   }
+  
 
   return (
     <>
