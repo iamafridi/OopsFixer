@@ -76,11 +76,12 @@ function App() {
     <div className="min-h-screen w-full bg-gray-900 dark:bg-gray-100 flex items-center justify-center p-4">
       <main className="grid grid-cols-1 md:grid-cols-2 gap-6 p-4 md:p-8 max-w-6xl w-full bg-gray-900 dark:bg-gray-800 text-white rounded-lg shadow-lg">
         {/* Code Editor Section */}
-        <div className="flex flex-col bg-gray-800 dark:bg-gray-200 p-4 rounded-lg shadow-md w-full md:min-w-[24rem]">
+        <div className="flex border border-blue-500 flex-col bg-gray-800 dark:bg-gray-200 p-4 rounded-lg shadow-md w-full md:min-w-[24rem]">
           <div className="flex-grow w-full overflow-hidden">
             <Editor
               value={code}
               onValueChange={setCode}
+              placeholder='WRITE YOUR CODE HERE FOR A QUICK REVIEW'
               highlight={code => prism.highlight(code, prism.languages.javascript, "javascript")}
               padding={10}
               style={{
@@ -118,7 +119,9 @@ function App() {
               <p>Loading review...</p>
             </div>
           ) : (
-            <div className="p-10">
+            <div className="p-1 h-80 text-left border border-blue-500 rounded-xl"
+            aria-placeholder=' Here is your result'
+            >
               <Markdown rehypePlugins={[rehypeHighlight]}>{review}</Markdown>
             </div>
           )}
