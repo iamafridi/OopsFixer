@@ -8,6 +8,7 @@ import rehypeHighlight from "rehype-highlight";
 import "highlight.js/styles/github-dark.css";
 import axios from 'axios';
 import './App.css';
+import { LuLoaderPinwheel } from "react-icons/lu";
 
 function App() {
   // State variables
@@ -76,13 +77,15 @@ function App() {
   }
 
   return (
+    
     <div className="min-h-screen w-full bg-gradient-to-b from-gray-50 via-gray-400 to-gray-700
  dark:bg-gray-100 flex flex-col items-center justify-between p-4">
       <header className="w-full flex justify-center items-center flex-col px-10">
-      <nav className="flex flex-wrap justify-between items-center w-full mb-10 pt-3 px-4 sm:px-6 lg:px-8">
-  {/* <img src={logo} alt="logo" className="w-28 object-contain" /> */}
 
-  <a href="/" className="logo_text2 object-contain cyan_gradient uppercase text-lg sm:text-xl md:text-2xl cursor-pointer ">OopsFixer</a>
+        {/* navbar here  */}
+      <nav className="flex flex-wrap md:text-center md:justify-between md:items-center w-full mb-10 pt-3 px-4 sm:px-6 lg:px-8">
+
+  <a href="/" className="logo_text2 object-contain cyan_gradient uppercase text-lg sm:text-xl md:text-2xl justify-center cursor-pointer ">OopsFixer</a>
   
   <div className="flex gap-2 flex-wrap justify-center sm:justify-end w-full sm:w-auto mt-2 sm:mt-0">
     <button
@@ -137,7 +140,7 @@ function App() {
     </header> *
   
     {/* Main Section */}
-    <main className="grid grid-cols-1 md:grid-cols-2 gap-6 p-4 md:p-8 max-w-6xl w-full bg-gray-900 dark:bg-gray-800 text-white rounded-lg ">
+    <main className="grid md:grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 gap-6 p-4 md:p-8 max-w-6xl w-full bg-gray-900 dark:bg-gray-800 text-white rounded-lg ">
       {/* Code Editor Section */}
       <div className="flex flex-col bg-gray-800 dark:bg-gray-200 p-4 rounded-lg shadow-md w-full md:min-w-[24rem]">
         <div className="flex-grow w-full border border-blue-500 rounded-xl overflow-hidden relative">
@@ -173,9 +176,9 @@ function App() {
       </div>
   
       {/* Review Output Section */}
-      <div className="bg-gray-800 dark:bg-gray-200 p-6 md:p-8 rounded-lg shadow-md overflow-y-auto w-full relative">
+      <div className="bg-gray-800 text-xs lg:text-[18px] dark:bg-gray-200 lg:p-6 md:p-8 rounded-lg shadow-md overflow-y-auto w-full relative">
         {review === '' && !loading && (
-         <div className="absolute p-2 rounded-xl top-1/3 left-1/2 transform -translate-x-1/2 
+         <div className="absolute lg:p-2 rounded-xl top-1/3 left-1/2 transform -translate-x-1/2 
          flex justify-center items-center text-gray-400 pointer-events-none font-bold 
          text-[8px] sm:text-[10px] md:text-xs lg:text-xs 
          overflow-hidden text-center break-words max-w-full w-[90%] sm:w-[70%] md:w-[50%] lg:w-[40%] 
@@ -188,16 +191,21 @@ function App() {
         {loading ? (
           <div className="flex flex-col items-center justify-center h-full space-y-4 p-6">
             {/* Loading Spinner */}
-            <div className="w-16 h-16 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
+            {/* <div className="w-16 h-16 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"><LuLoaderPinwheel/></div> */}
+            <div className="flex items-center justify-center">
+    <div className="w-16 h-16 border-4 border-blue-500 border-t-transparent rounded-full animate-spin flex items-center justify-center">
+      <LuLoaderPinwheel className="w-8 h-8 text-blue-500 animate-spin" />
+    </div>
+  </div>
             {/* Progress Bar */}
             <div className="w-full bg-gray-700 rounded-full h-2 px-2">
               <div className="bg-blue-500 h-2 transition-all duration-200" style={{ width: `${progress}%` }}></div>
             </div>
             <p>{progress}%</p>
-            <p>Loading review...</p>
+            <p className='font-bold'>Giving Your Code a Reality Check... 👀</p>
           </div>
         ) : (
-          <div className="p-10 border border-blue-500 rounded-xl">
+          <div className="p-2 px-3 lg:p-10 border border-blue-500 rounded-xl">
             <Markdown rehypePlugins={[rehypeHighlight]}>{review}</Markdown>
           </div>
         )}
