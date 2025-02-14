@@ -1,9 +1,9 @@
 # OopsFixer 🚀
 
-OopsFixer is an **AI-powered debugging assistant** designed to help developers analyze, detect, and fix code errors effortlessly. With its sleek interface and seamless integration with gemini flash 2.0 's cutting-edge technology, OopsFixer makes debugging smarter and faster!
+OopsFixer is an **AI-powered debugging assistant** designed to help developers analyze, detect, and fix code errors effortlessly. With its sleek interface and seamless integration with **Gemini flash 2.0 's** cutting-edge technology, OopsFixer makes debugging smarter and faster!
 
 ---
-
+![alt text](image.png)
 ## 🔥 Features
 
 ✅ **AI-Powered Code Review** – Get instant feedback on your code with AI-driven analysis.  
@@ -68,8 +68,6 @@ npm run dev
  cd ../frontend
  npm install  # Install dependencies
 ```
-Update the **API URL** in `frontend/src/config.js`:
-```js
 ```
 Run the frontend locally:
 ```sh

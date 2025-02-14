@@ -176,12 +176,12 @@ function App() {
       </div>
   
       {/* Review Output Section */}
-      <div className="bg-gray-800 text-xs lg:text-[18px] dark:bg-gray-200 lg:p-6 md:p-8 rounded-lg shadow-md overflow-y-auto w-full relative">
+      <div className="bg-gray-800 text-xs  lg:text-[18px] dark:bg-gray-200 lg:p-6 md:p-8 rounded-lg shadow-md overflow-y-auto w-full relative">
         {review === '' && !loading && (
          <div className="absolute lg:p-2 rounded-xl top-1/3 left-1/2 transform -translate-x-1/2 
          flex justify-center items-center text-gray-400 pointer-events-none font-bold 
          text-[8px] sm:text-[10px] md:text-xs lg:text-xs 
-         overflow-hidden text-center break-words max-w-full w-[90%] sm:w-[70%] md:w-[50%] lg:w-[40%] 
+         overflow-hidden text-center break-words  max-w-full w-[90%] sm:w-[70%] md:w-[50%] lg:w-[40%] 
          leading-tight whitespace-normal">
          YOUR REVIEW WILL APPEAR HERE
        </div>
@@ -205,7 +205,7 @@ function App() {
             <p className='font-bold'>Giving Your Code a Reality Check... 👀</p>
           </div>
         ) : (
-          <div className="p-2 px-3 lg:p-10 border border-blue-500 rounded-xl">
+          <div className="p-2  px-3 lg:p-10 border border-blue-500 rounded-xl">
             <Markdown rehypePlugins={[rehypeHighlight]}>{review}</Markdown>
           </div>
         )}
