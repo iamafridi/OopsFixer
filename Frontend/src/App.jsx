@@ -208,12 +208,15 @@ function App() {
     <footer className="w-full  text-gray-400 text-center p-1 mt-6">
   <p>
     &copy; 2024 OopsFixer. All rights reserved By  
-    <a 
-      className="underline ml-2 font-bold text-sm uppercase inline-flex items-center gap-1" 
-      href="http://"
-    >
-       Afridi Akbar Ifty <FiArrowUpRight />
-    </a>.
+    <a  
+  className="underline ml-2 font-bold text-sm uppercase inline-flex items-center gap-1" 
+  href="https://iamafridi-portfolio.netlify.app" 
+  target="_blank" 
+  rel="noopener noreferrer"
+>
+  Afridi Akbar Ifty <FiArrowUpRight />
+</a>
+
   </p>
 </footer>
 
