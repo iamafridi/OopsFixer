@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { FiArrowUpRight } from "react-icons/fi";
 import "prismjs/themes/prism-tomorrow.css";
 import Editor from "react-simple-code-editor";
 import prism from "prismjs";
@@ -57,7 +58,7 @@ function App() {
       console.log("Sending request to backend...");
       
       // API request to get code review
-      const response = await axios.post("http://localhost:3000/ai/get-review", { code });
+      const response = await axios.post("https://backend-beta-olive.vercel.app/ai/get-review", { code });
       console.log("Full API Response:", response.data);
       setReview(response.data.review || "No review received.");
       
@@ -75,9 +76,50 @@ function App() {
   }
 
   return (
-    <div className="min-h-screen w-full bg-gray-900 dark:bg-gray-100 flex flex-col items-center justify-between p-4">
+    <div className="min-h-screen w-full bg-gradient-to-b from-gray-50 via-gray-400 to-gray-700
+ dark:bg-gray-100 flex flex-col items-center justify-between p-4">
+      <header className="w-full flex justify-center items-center flex-col px-10">
+      <nav className="flex flex-wrap justify-between items-center w-full mb-10 pt-3 px-4 sm:px-6 lg:px-8">
+  {/* <img src={logo} alt="logo" className="w-28 object-contain" /> */}
+
+  <a href="/" className="logo_text2 object-contain cyan_gradient uppercase text-lg sm:text-xl md:text-2xl cursor-pointer ">OopsFixer</a>
+  
+  <div className="flex gap-2 flex-wrap justify-center sm:justify-end w-full sm:w-auto mt-2 sm:mt-0">
+    <button
+      type="button"
+      onClick={() => window.open('https://www.linkedin.com/in/iamafridi/')}
+      className="black_btn"
+    >
+      LinkedIn
+    </button>
+    <button
+      type="button"
+      onClick={() => window.open('https://github.com/iamafridi/oopsfixer')}
+      className="black_btn"
+    >
+      GitHub
+    </button>
+    <button
+      type="button"
+      onClick={() => window.open('https://iamafrididev.netlify.app')}
+      className="black_btn"
+    >
+      Contact
+    </button>
+  </div>
+</nav>
+
+  <h1 className="head_text">
+    Fix Your Code Effortlessly with <br className="max-md:hidden" />
+    <span className="cyan_gradient">OopsFixer AI</span>
+  </h1>
+  <h2 className="desc text-black">
+    Your AI-Powered Debugging Assistant. Instantly analyze, detect, and fix errors in your code using OpenAI's cutting-edge technology. Debug smarter with OopsFixer.
+  </h2>
+</header>
+
     {/* Navbar */}
-    <nav className="w-full text-white p-4">
+    {/* <nav className="w-full text-white p-4">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         <h1 className="text-2xl font-bold">OopsFixer</h1>
         <ul className="flex space-x-4">
@@ -89,10 +131,10 @@ function App() {
     </nav>
   
     {/* Header Text */}
-    <header className="text-center my-6">
+    {/* <header className="text-center my-6">
       <h1 className="text-4xl font-bold text-white">Welcome to OopsFixer</h1>
       <p className="text-gray-400">Your AI-powered code reviewer</p>
-    </header>
+    </header> *
   
     {/* Main Section */}
     <main className="grid grid-cols-1 md:grid-cols-2 gap-6 p-4 md:p-8 max-w-6xl w-full bg-gray-900 dark:bg-gray-800 text-white rounded-lg ">
@@ -133,9 +175,15 @@ function App() {
       {/* Review Output Section */}
       <div className="bg-gray-800 dark:bg-gray-200 p-6 md:p-8 rounded-lg shadow-md overflow-y-auto w-full relative">
         {review === '' && !loading && (
-          <div className="absolute p-2 rounded-xl top-1/3 left-1/2 transform -translate-x-1/2 flex justify-center items-center text-gray-400 pointer-events-none font-bold">
-            YOUR REVIEW WILL APPEAR HERE
-          </div>
+         <div className="absolute p-2 rounded-xl top-1/3 left-1/2 transform -translate-x-1/2 
+         flex justify-center items-center text-gray-400 pointer-events-none font-bold 
+         text-[8px] sm:text-[10px] md:text-xs lg:text-xs 
+         overflow-hidden text-center break-words max-w-full w-[90%] sm:w-[70%] md:w-[50%] lg:w-[40%] 
+         leading-tight whitespace-normal">
+         YOUR REVIEW WILL APPEAR HERE
+       </div>
+       
+       
         )}
         {loading ? (
           <div className="flex flex-col items-center justify-center h-full space-y-4 p-6">
@@ -157,9 +205,18 @@ function App() {
     </main>
   
     {/* Footer */}
-    <footer className="w-full bg-gray-800 text-gray-400 text-center p-4 mt-6">
-      <p>&copy; 2024 OopsFixer. All rights reserved.</p>
-    </footer>
+    <footer className="w-full  text-gray-400 text-center p-1 mt-6">
+  <p>
+    &copy; 2024 OopsFixer. All rights reserved By  
+    <a 
+      className="underline ml-2 font-bold text-sm uppercase inline-flex items-center gap-1" 
+      href="http://"
+    >
+       Afridi Akbar Ifty <FiArrowUpRight />
+    </a>.
+  </p>
+</footer>
+
   </div>
   
   );
