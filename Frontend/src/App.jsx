@@ -117,7 +117,7 @@ function App() {
     <span className="cyan_gradient">OopsFixer AI</span>
   </h1>
   <h2 className="desc text-black">
-    Your AI-Powered Debugging Assistant. Instantly analyze, detect, and fix errors in your code using OpenAI's cutting-edge technology. Debug smarter with OopsFixer.
+    Your AI-Powered Debugging Assistant. Instantly analyze, detect, and fix errors in your code using Gemini-(flash 2.0)'s cutting-edge technology. Debug smarter with OopsFixer.
   </h2>
 </header>
 
