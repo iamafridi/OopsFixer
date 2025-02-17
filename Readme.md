@@ -86,21 +86,9 @@ npm run dev
 
 ---
 
-## 💡 Future Enhancements
-
-🚀 AI-powered code suggestions for different programming languages.  
-🚀 User authentication for personalized debugging history.  
-🚀 Integration with GitHub for automated PR reviews.  
-
----
-
-## 🤝 Contributing
-We welcome contributions! Feel free to **open issues** and submit **pull requests**.
-
 ---
 
 ## 📞 Contact
-👤 **Developed by:** Afridi Akbar Ifty  
 🔗 **Portfolio:** [iamafridi-portfolio](https://iamafrididev.netlify.app)   
 
 ---
